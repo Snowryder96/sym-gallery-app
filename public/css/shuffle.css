@@ -1,0 +1,30 @@
+
+.grid-item { 
+  width: 250px;
+  margin: 5px;
+  position: absolute;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  object-fit: cover }
+.grid-item--width2 { width: 10%; }
+
+.grid-item:nth-child(odd) {
+  height: 200px;
+}
+@media (max-width: 575.98px) { 
+  .filter-button-group{
+    border-right: 0;
+    display: inline-block;
+    text-align: center;
+    margin: 10px auto;
+  }
+  .custom-btn{
+    margin: 10px auto;
+  }
+  .filters{
+    text-align: center;
+  }
+}
+
+

@@ -1,0 +1,21 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Hello AdminTechnicController!{% endblock %}
+
+{% block body %}
+<div class="container">
+  {{ form_start(form) }}
+  {{ form_widget(form) }}
+  <button type="submit" class="btn btn-primary">Modifier</button>
+  {{ form_end(form) }}
+</div>
+
+{% endblock %}
+
+{% block javascripts %}
+<script>
+  window.onload = function() {
+  $("label").html(`Modification de la category: <strong>{{technic.name}}</strong>`)
+};
+</script>
+{% endblock %}

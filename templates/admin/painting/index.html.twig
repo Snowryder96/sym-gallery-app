@@ -1,0 +1,68 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Paintings{% endblock %}
+
+{% block body %}
+<section class="page">
+    <div class="container-fluid">
+        <h1 class="my-3 text-primary">Gestion des Peintures</h1>
+        <a href="{{ path('admin_painting_new') }}" class="btn btn-primary mb-4 ml-4">Importer une nouvelle peinture</a>
+        <table class="table table-hover w-100" id="datatable" >
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Peinture</th>
+                    <th>Titre</th>
+                    <th>Date</th>
+                    <th>Légende</th>
+                    <th>Dimenssions</th>
+                    <th>Description</th>
+                    <th>Technic</th>
+                    <th>Category</th>
+                    <th>Disponibilité</th>
+                    <th>action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for painting in paintings %}
+                <tr>
+                    <td>{{loop.index}}</td>
+                    <td><img src="{{ asset('uploads/paintings/' ~ painting.paintingFilename )}}" alt="Peinture nommé {{painting.title}}" class="picture-mini mr-2"></td>
+                    <td >{{painting.title}}</td>
+                    <td>{{painting.createdAt|date('d/m/Y')}}</td>
+                    <td >{{painting.legende}}</td>
+                    <td >{{painting.width}} x {{painting.height}}</td>
+                    <td >{{ painting.description|length > 50 ? painting.description|slice(0, 50) ~ '...' : painting.description }}</td>
+                    {% if painting.technic != null %}
+                        <td >{{ painting.technic.name }}</td>
+                    {% else %}
+                        <td >non renseigné</td>
+                    {% endif %}
+                    {% if painting.category != null %}
+                        <td >{{ painting.category.name }}</td>
+                    {% else %}
+                        <td >non renseigné</td>
+                    {% endif %}
+                    {% if painting.availability %}
+                        <td>Disponible</td>
+                    {% else %}
+                        <td>Non Disponible</td>
+                    {% endif %}
+                    <td>
+                        <a href="{{ path("admin_painting_edit", {'slug': painting.slug}) }}" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                        <a href="{{ path("admin_painting_delete", {'slug': painting.slug}) }}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+    </div>
+</section>
+{% endblock %}
+{% block javascripts %}
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.20/r-2.2.3/datatables.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+    <script src="{{ asset('js/dataTable.js')}}"></script>
+{% endblock %}

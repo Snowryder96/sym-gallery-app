@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}painting{% endblock %}
+
+{% block body %}
+<section class="page py-5 px-1">
+    <div class="container-fluid">
+        <div class="row text-center my-5">
+            <div class="col-md-8 col-sm-12 ">
+                <img src="{{ asset('uploads/paintings/' ~ painting.paintingFilename )}}" class="w-75 m-auto shadow-lg" alt="image de la peinture {{painting.title}}">
+            </div>
+            <div class="col-md-4 col-sm-12">
+            <h3 class="text-primary m-5">{{painting.title}}</h3>
+                <h4>{{painting.legende}}</h4>
+                <p>{{painting.description}}</p>
+                <p>{{painting.width}}x{{painting.height}}</p>
+                {% if painting.category is not null %}
+                    <p>{{painting.category.name}}</p>
+                {% endif %}
+                {% if painting.technic is not null %}
+                    <p>{{painting.technic.name}}</p>
+                {% endif %}
+
+                {% if painting.availability %}
+                    <a href="" class="btn custom-buy-btn">Disponible</a>
+                {% else %}
+                     <p class="font-italic">Non Disponible</p>  
+                {% endif %}
+                <p>
+                    <small>mis en ligne le : {{painting.createdAt|date('d/m/Y')}}</small>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

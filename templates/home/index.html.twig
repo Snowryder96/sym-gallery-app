@@ -1,0 +1,131 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+<img src="{{ asset('images/stain-blue-1.svg') }}" class="blue-stain" alt="blue-paint-stain">
+
+
+<img src="{{ asset('images/stain-turquoise-2.svg') }}" class="turquoise-stain" alt="orange-paint-stain">
+<img src="{{ asset('images/stain-orange-1.svg') }}" class="orange-stain" alt="orange-paint-stain">
+<img src="{{ asset('images/stain-orange-2.svg') }}" class="orange-stain-2" alt="orange-paint-stain">
+
+
+
+<nav class="navmenu mr-2">
+  <ul>
+    <li><a href="#first-section" class="first-section activee"></a></li>
+    <li><a href="#second-section" class="second-section"></a></li>
+    <li><a href="#third-section" class="third-section"></a></li>
+    <li><a href="#fourth-section" class="fourth-section"></a></li>
+    <li><a href="#fivth-section" class="fivth-section"></a></li>
+    <li><a href="#footer" class="footer"></a></li>
+  </ul>
+</nav>
+
+<section class="section d-flex flex-row-reverse p-5 my-0 mx-auto" id="first-section">
+  <div class="text-center mx-auto my-auto home-profile text-primary ">
+  <img src="{{ asset('images/profile-concept.svg') }}" class="home-logo" data-aos="zoom-in" data-aos-duration="1000" alt="">
+    <h1 class="first-section-title mb-4" data-aos="fade-right" data-aos-duration="1000">Patricia Masuy</h1>
+    <blockquote class="blockquote text-center text-primary" data-aos="fade-left" data-aos-duration="1000">
+      <p class="mb-0"><i class="fas fa-quote-left"></i>&nbsp;L'art n'est pas une compétition, c'est une émotion&nbsp;<i class="fas fa-quote-right"></i></p>
+      <footer class="blockquote-footer">Citation par <cite title="Source Title">Patricia Masuy</cite></footer>
+    </blockquote>
+  </div>
+  
+  {# <img src="{{ asset('images/artist-illustration.svg') }}" class=" illustration" alt="illustration"> #}
+</section>
+<section class="d-flex section w-100 section-second text-white px-3 align-items-center row" id="second-section">
+  <div class="col-md-6 col-xs-12 gap-bottom" >
+      <h1 class="second-section-title" data-aos="fade-right" data-aos-duration="1000">Peinture personnalisée !</h1>
+      <p class="h4" data-aos="fade-right" data-aos-duration="1200">Je peux vous peindre un portrait, un paysage, un animal ou tout autre...</p>
+    </div>
+    <div class="col-md-6 col-xs-12 mt-5">
+      <div class="composition" data-aos="zoom-in" data-aos-duration="1000">
+            <img src="{{ asset('images/composition/img1.JPG') }}" alt="peinture 1" class="composition__photo composition__photo--p1">
+            <img src="{{ asset('images/composition/img2.jpg') }}" alt="peinture 2" class="composition__photo composition__photo--p2">
+            <img src="{{ asset('images/composition/img3.jpg') }}" alt="peinture 3" class="composition__photo composition__photo--p3">                   
+        </div>  
+    </div>
+    
+</section>
+<section class="d-flex section w-100 section-third align-items-center row " id="third-section">
+  <div class="col-md-6 col-xs-12 p-0">
+      <img src="{{ asset('images/summer-girl.jpg') }}" class="img-fluid" alt="">
+    </div>
+  <div class="col-md-6 col-xs-12 text-orangered px-3" >
+      <h1 class="second-section-title" data-aos="fade-right" data-aos-duration="1000">Illustrations personnalisée !</h1>
+      <p class="h4" data-aos="fade-right" data-aos-duration="1100">Je peux vous peindre un portrait, un paysage, un animal ou tout autre...</p>
+    </div>
+    
+</section>
+<section class="d-flex section w-100 text-white section-forth align-items-center row " id="fourth-section">
+  <div class="col-md-6 col-xs-12 px-3">
+      <h1 class="title second-section-title" data-aos="fade-right" data-aos-duration="1000">Illustrations personnalisée !</h1>
+      <p class="h4" data-aos="fade-right" data-aos-duration="1100">Je peux vous peindre un portrait, un paysage, un animal ou tout autre...</p>
+    </div>
+  <div class="col-md-6 col-xs-12" >
+    <img src="{{ asset('images/renard.jpg') }}" class="img-fluid renard" alt="">
+  </div>
+</section>
+<section class="d-flex section w-100 section-fivth text-primary align-items-center row p-0" id="fivth-section">
+  <img src="{{ asset('images/stain-blue-1.svg') }}" class="blue-stain-2" alt="blue-paint-stain">
+  <img src="{{ asset('images/stain-orange-3.svg') }}" class="orange-stain-3" alt="blue-paint-stain">
+  <div class="col p-0">
+    <h1 class="display-4 p-5 latest-title shadow-lg" data-aos="fade-right" data-aos-duration="1000">Dernières peintures...</h1>
+  </div>
+  <div class="d-flex flex-row align-items-center justify-content-around row p-0">
+    {% for painting in lastPaintings %}
+    <div class="col-md-4 col-xs-12">
+      {% set url = path('painting_show', {'slug': painting.slug }) %}
+      <a href="{{url}}">
+        <img src="{{ asset('uploads/paintings/' ~ painting.paintingFilename )}}" data-aos="fade-right" data-aos-duration="1200" class="w-100 mb-2 shadow-lg" alt="">
+      </a>
+    </div>
+      
+    {% endfor %}
+  </div>
+  
+</section>
+
+
+  
+
+{% endblock %}
+{% block javascripts %}
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    const allItems = document.querySelectorAll(".navmenu ul li a")
+    {# allItems.forEach(item => {
+      item.addEventListener("click", function(e){
+        for(var i = 0; i < allItems.length; i++){
+          allItems[i].classList.remove("activee")
+        }
+        this.classList.add("activee")
+      })
+    }) #}
+    var content = $(".section");
+    $(window).on("scroll", function(e) {
+        var el = content.filter(function(i, el) {
+          console.log($(el).css("height"))
+          return el.getBoundingClientRect().bottom >= parseInt($(el).css("height"))
+          //console.log(el.getBoundingClientRect().bottom >= parseInt($(el).css("height")+20)) 
+        })
+        , sectionId = el.is(content) 
+                      ? el.attr("id") 
+                      : content.eq(1).attr("id");
+        sectionLink = $("."+sectionId);
+        allItems.forEach(item => {
+        for(var i = 0; i < allItems.length; i++){
+            allItems[i].classList.remove("activee")
+          }
+        })
+        console.log(sectionLink)
+        sectionLink.addClass("activee");
+        //console.log(sectionLink, allItems);
+    }).scroll();
+  </script>
+{% endblock %}
+
+

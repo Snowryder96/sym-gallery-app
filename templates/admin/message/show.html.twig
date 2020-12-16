@@ -1,0 +1,17 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Hello AdminMessageController!{% endblock %}
+
+{% block body %}
+<section class="page py-5">
+    <div class="container p-4">
+        <div class="card p-5">
+            <p>De la part de : <strong>{{message.name}}</strong></p>
+            <p>email : <strong>{{message.email}}</strong></p>
+            <p>telephone : <strong>{{message.phone}}</strong></p>
+            <p>date d'envoie : <strong>{{message.createdAt|date('d/m/Y')}}</strong></p>
+            <p>message : <strong>{{message.content}}</strong></p>
+        </div>
+    </div>
+</section>
+{% endblock %}

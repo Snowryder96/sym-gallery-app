@@ -1,0 +1,32 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Céation d'une peinture{% endblock %}
+
+{% block body %}
+
+<section class="container">
+    <h1 class="text-primary my-5">Importer une nouvelle peinture!</h1>
+    {{form_start(form)}}
+    <div class="row">
+        <div class="col-md-6">
+            {{form_row(form.title)}}
+            {{form_row(form.legende)}}
+            {{form_row(form.description)}}
+            {{form_row(form.width)}}
+            {{form_row(form.height)}}
+        </div>
+        <div class="col-md-6 mb-4">
+            {{form_row(form.availability)}}
+            {{form_row(form.category)}}
+            {{form_row(form.technic)}}
+            {{form_row(form.painting)}}
+            <aside id="img-preview"></aside>
+        </div>
+        <button type="submit" id="submit" class="btn btn-primary my-5">Crée la peinture</button>
+    </div>
+    {{form_end(form)}}
+</section>
+{% endblock %}
+{% block javascripts %}
+<script src="{{ asset('js/fileScript.js')}}"></script>
+{% endblock %}

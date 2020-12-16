@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ContactController!{% endblock %}
+
+{% block body %}
+<section class="page">
+    <div class="container p-4">
+    <article class="d-flex flex-col text-center card profile my-5 p-4">
+        <img src="{{ asset('images/pm-s.png' )}}" class="border rounded-circle border-5 my-1 mx-auto" alt="">
+            <h2 class="font-weight-bold">Patricia Masuy</h2>
+            <p class="text-italic"><em>hahah</em></p>
+            <p class="px-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda aut laboriosam vero placeat praesentium a minus, quas dolore excepturi rerum ratione dicta repellendus. Perspiciatis inventore totam rerum laudantium. Quos, voluptas.</p>
+    </article>
+    <section class="card p-5">
+        <h1 class="text-primary mb-5">Contactez moi !</h1>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button type="submit" class="btn btn-primary">Envoyer</button>
+        {{ form_end(form) }}
+    </section>
+    
+    </div>
+</section>
+{% endblock %}
+{% block javascripts %}
+<script>
+    $('label[for="message_name"]').append("<em class='text-muted'>&nbsp;-&nbsp;Option­nel</em>")
+    $('label[for="message_phone"]').append("<em class='text-muted'>&nbsp;-&nbsp;Option­nel</em>")
+</script>
+{% endblock %}

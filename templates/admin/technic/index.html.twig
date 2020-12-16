@@ -1,0 +1,44 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Hello AdminTechnicController!{% endblock %}
+
+{% block body %}
+<section class="page">
+    <div class="container">
+        <h1 class="my-5 text-primary">Gestion des Techniques</h1>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button type="submit" class="btn btn-primary mb-5">Ajouter</button>
+        {{ form_end(form) }}
+            {% if technics %}
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Numero</th>
+                        <th>Nom</th>
+                        <th>Action</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for technic in technics %}
+                    <tr>
+                        <td>{{ loop.index }} </td>
+                        <td>{{technic.name}}</td>
+
+                        <td>
+                            <a href="{{ path('admin_technic_edit', {'id': technic.id}) }}" class="btn btn-primary"><i class="fas fa-pen"></i></a>
+                            <a href="{{ path('admin_technic_delete', {'id': technic.id} ) }}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+                <h6 class="alert alert-info">
+                    Aucune Technique.
+                </h6>
+            {% endif %}
+    </div>
+</section>
+{% endblock %}

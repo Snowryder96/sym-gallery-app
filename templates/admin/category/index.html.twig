@@ -1,0 +1,46 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Admin Categories{% endblock %}
+
+{% block body %}
+<section class="page">
+    <div class="container">
+        <h1 class="text-primary my-5">Gestion des categories</h1>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button type="submit" class="btn btn-primary mb-5">Ajouter</button>
+        {{ form_end(form) }}
+        {% if categories %}
+        <table class="table table-hover my-4">
+            <thead>
+                <tr>
+                    <th>Numero</th>
+                    <th>Nom</th>
+                    <th>Action</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {% for category in categories %}
+                <tr>
+                    <td>{{ loop.index }} </td>
+                    <td>{{category.name}}</td>
+
+                    <td>
+                        <a href="{{ path('admin_category_edit', {'id': category.id} ) }}" class="btn btn-primary"><i class="fas fa-pen"></i></a>
+                        <a href="{{ path('admin_category_delete', {'id': category.id} ) }}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+            <h6 class="alert alert-info">
+                Vous n'avez pas encore de messages.
+            </h6>
+        {% endif %}
+        
+    </div>
+</section>
+{% endblock %}
+

@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification d'une peinture{% endblock %}
+
+{% block body %}
+<section class="page">
+    <div class="container my-5">
+    <h2 class="text-primary my-4">Modification d'une peinture</h2>
+    {{form_start(form)}}
+        <div class="row">
+            
+            <div class="col-md-6">
+                
+                {{form_row(form.title)}}
+                {{form_row(form.description)}}
+                {{form_row(form.legende)}}
+                {{form_row(form.width)}}
+                {{form_row(form.height)}}
+                {{form_row(form.availability)}}
+                {{form_row(form.category)}}
+                {{form_row(form.technic)}}
+                
+                
+            </div>
+            <div class="col-md-6">
+                <img src="{{ asset('uploads/paintings/' ~ painting.paintingFilename) }}" class="img-fluid" alt="">
+                <button type="submit" class="btn btn-primary my-5 float-right">Modifier la peinture</button>
+            </div>
+            
+        </div>
+        {{form_end(form)}}
+    </div>
+</section>
+
+{% endblock %}

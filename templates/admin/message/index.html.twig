@@ -1,0 +1,52 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Hello AdminMessageController!{% endblock %}
+
+{% block body %}
+<section class="page">
+    <div class="container">
+        <h1 class="text-primary my-5">Gestion des Messages</h1>
+        {% if messages %}
+        <table class="table table-hover" id="datatable">
+            <thead>
+                <tr>
+                    <th>Message</th>  
+                    <th>Date d'envoie</th>
+                    <th>Nom</th>
+                    <th>Email</th>
+                    <th>Telephone</th>
+                    <th>Action</th>           
+                </tr>
+            </thead>
+            <tbody>
+                {% for message in messages %}
+                <tr>
+                    <td>{{message.content}}</td>
+                    <td>{{message.createdAt|date('d/m/Y - H:i')}}</td>
+                    <td>{{message.name}}</td>
+                    <td>{{message.email}}</td>
+                    <td>{{message.phone}}</td>
+                    <td>
+                        <a href="{{ path('admin_message_show', {'id': message.id}) }}" class="btn btn-primary"><i class="fas fa-eye"></i></a>
+                        <a href="{{ path('admin_message_delete', {'id': message.id} ) }}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+            <h4 class="alert alert-warning text-center">
+                Vous n'avez pas encore de messages.
+            </h4>
+        {% endif %}
+        
+    </div>
+</section>
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.20/r-2.2.3/datatables.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+    <script src="{{ asset('js/dataTable.js')}}"></script>
+{% endblock %}

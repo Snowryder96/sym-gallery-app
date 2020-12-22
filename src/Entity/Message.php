@@ -92,7 +92,7 @@ class Message
 
     public function setPhone(?string $phone): self
     {
-        $this->phone = $phone;
+        $this->phone = strip_tags($phone);
 
         return $this;
     }
@@ -104,7 +104,7 @@ class Message
 
     public function setContent(string $content): self
     {
-        $this->content = htmlspecialchars($content);
+        $this->content = htmlspecialchars(strip_tags($content));
 
         return $this;
     }

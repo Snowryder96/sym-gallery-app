@@ -3,15 +3,10 @@
 {% block title %}Home{% endblock %}
 
 {% block body %}
-<img src="{{ asset('images/stain-blue-1.svg') }}" class="blue-stain" alt="blue-paint-stain">
-
-
-<img src="{{ asset('images/stain-turquoise-2.svg') }}" class="turquoise-stain" alt="orange-paint-stain">
-<img src="{{ asset('images/stain-orange-1.svg') }}" class="orange-stain" alt="orange-paint-stain">
-<img src="{{ asset('images/stain-orange-2.svg') }}" class="orange-stain-2" alt="orange-paint-stain">
-
-
-
+  <img src="{{ asset('images/stain-blue-1.svg') }}" class="blue-stain d-none d-sm-block" alt="blue-paint-stain">
+  <img src="{{ asset('images/stain-turquoise-2.svg') }}" class="position-absolute d-none d-sm-block"  alt="orange-paint-stain">
+  <img src="{{ asset('images/mobile/stain-turquoise-2.svg') }}" class="position-absolute d-block d-sm-none"  alt="orange-paint-stain">
+  <img src="{{ asset('images/stain-orange-2.svg') }}" class="position-absolute d-none d-sm-block" stlye="bottom:0;"  alt="orange-paint-stain">
 <nav class="navmenu mr-2">
   <ul>
     <li><a href="#first-section" class="first-section activee"></a></li>
@@ -36,6 +31,7 @@
   {# <img src="{{ asset('images/artist-illustration.svg') }}" class=" illustration" alt="illustration"> #}
 </section>
 <section class="d-flex section w-100 section-second text-white px-3 align-items-center row" id="second-section">
+  <img src="{{ asset('images/mobile/stain-orange-2.svg') }}" class="position-absolute d-block d-sm-none"  alt="orange-paint-stain">
   <div class="col-md-6 col-xs-12 gap-bottom" >
       <h1 class="second-section-title" data-aos="fade-right" data-aos-duration="1000">Peinture personnalisée !</h1>
       <p class="h4" data-aos="fade-right" data-aos-duration="1200">Je peux vous peindre un portrait, un paysage, un animal ou tout autre...</p>
@@ -51,7 +47,7 @@
 </section>
 <section class="d-flex section w-100 section-third align-items-center row " id="third-section">
   <div class="col-md-6 col-xs-12 p-0">
-      <img src="{{ asset('images/summer-girl.jpg') }}" class="img-fluid" alt="">
+      <img src="{{ asset('images/summergirl.jpg') }}" class="img-fluid" alt="">
     </div>
   <div class="col-md-6 col-xs-12 text-orangered px-3" >
       <h1 class="second-section-title" data-aos="fade-right" data-aos-duration="1000">Illustrations personnalisée !</h1>
@@ -67,10 +63,12 @@
   <div class="col-md-6 col-xs-12" >
     <img src="{{ asset('images/renard.jpg') }}" class="img-fluid renard" alt="">
   </div>
+  <img src="{{ asset('images/stain-orange-3.svg') }}" class="position-absolute d-none d-sm-block"  alt="blue-paint-stain">
+
 </section>
-<section class="d-flex section w-100 section-fivth text-primary align-items-center row p-0" id="fivth-section">
-  <img src="{{ asset('images/stain-blue-1.svg') }}" class="blue-stain-2" alt="blue-paint-stain">
-  <img src="{{ asset('images/stain-orange-3.svg') }}" class="orange-stain-3" alt="blue-paint-stain">
+<section class="d-flex section w-100 section-fivth text-white align-items-center row p-0" id="fivth-section">
+  <img src="{{ asset('images/mobile/stain-orange-4.svg') }}" class="position-absolute d-none d-sm-block"  alt="blue-paint-stain">
+  <img src="{{ asset('images/stain-blue-1.svg') }}" class="position-absolute d-none d-sm-block" alt="blue-paint-stain">
   <div class="col p-0">
     <h1 class="display-4 p-5 latest-title shadow-lg" data-aos="fade-right" data-aos-duration="1000">Dernières peintures...</h1>
   </div>
@@ -87,10 +85,6 @@
   </div>
   
 </section>
-
-
-  
-
 {% endblock %}
 {% block javascripts %}
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

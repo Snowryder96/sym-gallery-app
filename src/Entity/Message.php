@@ -104,7 +104,7 @@ class Message
 
     public function setContent(string $content): self
     {
-        $this->content = htmlspecialchars(strip_tags($content));
+        $this->content = strip_tags($content);
 
         return $this;
     }

@@ -171,9 +171,11 @@ section.page{
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
 .custom-btn {
-  border: solid #2196f3 3px;
+  border: solid #2196f3 2px;
   color: #2196f3;
   font-weight: bold;
+  padding: 5px 10px;
+  text-transform: capitalize;
   border-radius: 8px;
   transition: all .4s; }
   .custom-btn:hover {
@@ -275,11 +277,10 @@ section.page{
   background-size: contain;
   color: white;
 }
+
 .blue-stain{
   position: absolute;
-  width: 500px;
   right: 0;
-  z-index: 0;
 }
 .orange-stain{
   position: absolute;
@@ -318,6 +319,7 @@ section.page{
 }
 .section{
   min-height: 100vh;
+  overflow: hidden;
 }
 .section-second{
   background-color:#222222;
@@ -326,6 +328,7 @@ section.page{
   height: 100vh;
   padding: 1.5em 2em;
   position: relative;
+  overflow: hidden;
 }
 .section-third{
   background-image: url("../images/grey-bg.png");
@@ -333,17 +336,17 @@ section.page{
   z-index: 1;
   height: 100vh;
   position: relative;
+  overflow: hidden;
 }
 .section-forth{
   background-color:#222222;
   position: relative;
   z-index: 2;
+  overflow: hidden;
 }
 .section-fivth{
-  background-image: url("../images/lightblue-bg.svg");
-  background-size: cover;
-  position: relative;
   z-index: 2;
+  overflow: hidden;
 }
 .text-orangered{
   color:orangered
@@ -352,7 +355,10 @@ section.page{
   color:orange
 }
 .latest-title{
-  background-color: rgba(255, 255, 255, 0.705);
+  background-color: #222222;
+}
+.behind{
+  z-index: -1;
 }
 
 .blue-stain-2{
@@ -475,10 +481,7 @@ footer{
   .filters{
     text-align: center;
   }
-  .blue-stain{
-    right: -200px;
-    top: -50px;
-  }
+  
   .orange-stain-2{
     bottom: -460px;  
   }

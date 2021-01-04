@@ -12,7 +12,7 @@
                 <button data-filter=".1" class="btn custom-btn mb-1">Disponible</button>
                 <button data-filter=".0" class="btn custom-btn mb-1">Non disponible</button>
             </div>        
-            <div class="button-group filter-button-group my-4 " data-filter-group="category" id="category">
+            <div class="button-group filter-button-group my-4 d-none d-sm-block" data-filter-group="category" id="category">
                 <h3 class="text-primary my-3">Categorie</h3>
                 <hr>
                 <button data-filter="*" class="btn custom-btn mb-1 active">Toutes</button>
@@ -20,7 +20,7 @@
                 <button data-filter=".{{category.name}}" class="btn custom-btn mb-1 d-block">{{category.name}}</button>
                 {% endfor %} 
             </div>
-            <div class="button-group filter-button-group my-4 " data-filter-group="technic" id="technic">
+            <div class="button-group filter-button-group my-4 d-none d-sm-block" data-filter-group="technic" id="technic">
                 <h3 class="text-primary my-3">Technique</h3>
                 <hr>
                 <button data-filter="*" class="btn custom-btn mb-1 active ">Toutes</button>

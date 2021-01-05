@@ -144,6 +144,17 @@ input#nightSwitch[type=checkbox] {
 section.page{
   min-height: 75%;
 }
+a.nav-link{
+  border-bottom: 3px solid transparent;
+}
+a.nav-link:hover{
+  transition: 1s;
+  border-bottom: 3px solid white;
+}
+a.nav-link:not(:hover){
+  transition: 1s;
+
+}
 .logo{
   width: 40px;
 }
@@ -468,6 +479,10 @@ nav.navmenu ul li a.activee{
 nav.navmenu ul li a.activee::before{
   background-color: rgb(33,150,243);
 }
+.bg-primary-dark{
+  background-color: rgb(8, 118, 207);
+}
+
 footer{
   z-index:10;
 }

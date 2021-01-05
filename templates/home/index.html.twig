@@ -9,11 +9,11 @@
   <img src="{{ asset('images/stain-orange-2.svg') }}" class="position-absolute d-none d-sm-block" alt="orange-paint-stain">
 <nav class="navmenu mr-2 d-none d-sm-block">
   <ul>
-    <li><a href="#first-section" class="first-section "></a></li>
-    <li><a href="#second-section" class="second-section"></a></li>
-    <li><a href="#third-section" class="third-section"></a></li>
-    <li><a href="#fourth-section" class="fourth-section"></a></li>
-    <li><a href="#fivth-section" class="fivth-section"></a></li>
+    <li><a href="#first-section" class="first-section font-0" alt="first-section">-</a></li>
+    <li><a href="#second-section" class="second-section font-0" alt="second-section">-</a></li>
+    <li><a href="#third-section" class="third-section font-0" alt="third-section">-</a></li>
+    <li><a href="#fourth-section" class="fourth-section font-0" alt="fourth-section">-</a></li>
+    <li><a href="#fivth-section" class="fivth-section font-0" alt="fivth-section">-</a></li>
   </ul>
 </nav>
 
@@ -74,8 +74,8 @@
     {% for painting in lastPaintings %}
     <div class="col-md-4 col-xs-12">
       {% set url = path('painting_show', {'slug': painting.slug }) %}
-      <a href="{{url}}">
-        <img src="{{ asset('uploads/paintings/' ~ painting.paintingFilename )}}" data-aos="fade-right" data-aos-duration="1200" class="w-100 mb-2 shadow-lg" alt="">
+      <a href="{{url}}" alt="{{painting.paintingFilename}}">
+        <img src="{{ asset('uploads/paintings/' ~ painting.paintingFilename )}}" data-aos="fade-right" data-aos-duration="1200" class="w-100 mb-2 shadow-lg" alt="{{painting.paintingFilename}}">
       </a>
     </div>
       

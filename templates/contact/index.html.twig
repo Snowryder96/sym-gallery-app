@@ -1,19 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ContactController!{% endblock %}
+{% block title %}Contactez-moi{% endblock %}
 
 {% block body %}
-<section class="page">
-    <img src="{{ asset('images/contact-stain.svg') }}" class="position-absolute d-none d-sm-block behind" alt="orange-paint-stain">
-    <div class="container p-4">
-    <article class="d-flex flex-col text-center card profile my-5 p-4">
-        <img src="{{ asset('images/pm-s.png' )}}" class="border rounded-circle border-5 my-1 mx-auto" alt="">
-            <h2 class="font-weight-bold">Patricia Masuy</h2>
-            <p class="text-italic"><em>hahah</em></p>
-            <p class="px-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda aut laboriosam vero placeat praesentium a minus, quas dolore excepturi rerum ratione dicta repellendus. Perspiciatis inventore totam rerum laudantium. Quos, voluptas.</p>
+<section class="page contact">
+    <img src="{{ asset('images/contact-stain.svg') }}" class="position-absolute behind" alt="orange-paint-stain">
+    <div class="container p-4 my-0">
+    <article class="d-flex flex-column text-center front bg-transparent mt-5 rounded">
+        <div class="bg-white opacity-5 shadow-lg rounded">
+            <img src="{{ asset('images/pm-s.png' )}}" class="border rounded-circle border-5 my-5 mx-auto shadow-lg" alt="Photo de profile">
+        </div>
+            <div class="profile p-4 rounded opacity-5 shadow-lg">
+                <h2 class="font-weight-bold my-3">Patricia Masuy</h2>
+                <p class="text-italic"><em>hahah</em></p>
+                <p class="px-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda aut laboriosam vero placeat praesentium a minus, quas dolore excepturi rerum ratione dicta repellendus. Perspiciatis inventore totam rerum laudantium. Quos, voluptas.</p>
+            </div>    
     </article>
-    <section class="card p-5">
-        
+    <section class="card p-5 opacity-5 rounded shadow-lg">
         <h1 class="text-primary mb-5">Contactez moi !</h1>
         {{ form_start(form) }}
         {{ form_widget(form) }}

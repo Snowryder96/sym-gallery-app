@@ -1,13 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}painting{% endblock %}
+{% block title %}Peinture{% endblock %}
 
 {% block body %}
+
 <section class="page py-5 px-1">
     <div class="container-fluid">
-        <div class="row text-center my-5">
+        <div class="row text-center my-5 align-items-center">
             <div class="col-md-8 col-sm-12 ">
-                <img src="{{ asset('uploads/paintings/' ~ painting.paintingFilename )}}" class="w-75 m-auto shadow-lg" alt="image de la peinture {{painting.title}}">
+                <img src="{{ asset('uploads/paintings/' ~ painting.paintingFilename )}}" class="w-100 m-auto shadow-lg" alt="image de la peinture {{painting.title}}">
             </div>
             <div class="col-md-4 col-sm-12">
             <h3 class="text-primary m-5">{{painting.title}}</h3>
@@ -33,5 +34,9 @@
         </div>
     </div>
 </section>
+
+{% endblock %}
+{% block javascripts %}
+
 
 {% endblock %}

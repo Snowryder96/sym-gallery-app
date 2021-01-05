@@ -144,6 +144,15 @@ input#nightSwitch[type=checkbox] {
 section.page{
   min-height: 75%;
 }
+.logo{
+  width: 40px;
+}
+.base{
+  z-index: 0;
+}
+.front{
+  z-index: 11;
+}
 
 .shuffle-item{
   height: 90px;
@@ -271,11 +280,11 @@ section.page{
   margin-bottom: 6em;
 }
 .profile{
-  background:rgb(33,150,243);
-  background-image: url('../images/bg2.jpg');
-  background: linear-gradient(0deg, rgba(33,150,243,1) 70%, rgba(0,4,4,0) 20%);
-  background-size: contain;
+  background:#222222;
   color: white;
+}
+.opacity-5{
+  opacity: .9;
 }
 
 .blue-stain{

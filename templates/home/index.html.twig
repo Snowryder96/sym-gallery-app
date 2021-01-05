@@ -1,20 +1,19 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Accueil{% endblock %}
 
 {% block body %}
   <img src="{{ asset('images/stain-blue-1.svg') }}" class="blue-stain d-none d-sm-block" alt="blue-paint-stain">
   <img src="{{ asset('images/stain-turquoise-2.svg') }}" class="position-absolute d-none d-sm-block"  alt="orange-paint-stain">
   <img src="{{ asset('images/mobile/stain-turquoise-2.svg') }}" class="position-absolute d-block d-sm-none"  alt="orange-paint-stain">
-  <img src="{{ asset('images/stain-orange-2.svg') }}" class="position-absolute d-none d-sm-block" stlye="bottom:0;"  alt="orange-paint-stain">
-<nav class="navmenu mr-2">
+  <img src="{{ asset('images/stain-orange-2.svg') }}" class="position-absolute d-none d-sm-block" alt="orange-paint-stain">
+<nav class="navmenu mr-2 d-none d-sm-block">
   <ul>
-    <li><a href="#first-section" class="first-section activee"></a></li>
+    <li><a href="#first-section" class="first-section "></a></li>
     <li><a href="#second-section" class="second-section"></a></li>
     <li><a href="#third-section" class="third-section"></a></li>
     <li><a href="#fourth-section" class="fourth-section"></a></li>
     <li><a href="#fivth-section" class="fivth-section"></a></li>
-    <li><a href="#footer" class="footer"></a></li>
   </ul>
 </nav>
 
@@ -27,13 +26,12 @@
       <footer class="blockquote-footer">Citation par <cite title="Source Title">Patricia Masuy</cite></footer>
     </blockquote>
   </div>
-  
   {# <img src="{{ asset('images/artist-illustration.svg') }}" class=" illustration" alt="illustration"> #}
 </section>
 <section class="d-flex section w-100 section-second text-white px-3 align-items-center row" id="second-section">
   <img src="{{ asset('images/mobile/stain-orange-2.svg') }}" class="position-absolute d-block d-sm-none"  alt="orange-paint-stain">
-  <div class="col-md-6 col-xs-12 gap-bottom" >
-      <h1 class="second-section-title" data-aos="fade-right" data-aos-duration="1000">Peinture personnalisée !</h1>
+  <div class="col-md-6 col-xs-12 gap-bottom text-right pr-5" data-aos="fade-right" data-aos-duration="1000" >
+      <h1 class="second-section-title" >Peinture personnalisée !</h1>
       <p class="h4" data-aos="fade-right" data-aos-duration="1200">Je peux vous peindre un portrait, un paysage, un animal ou tout autre...</p>
     </div>
     <div class="col-md-6 col-xs-12 mt-5">
@@ -47,21 +45,21 @@
 </section>
 <section class="d-flex section w-100 section-third align-items-center row " id="third-section">
   <div class="col-md-6 col-xs-12 p-0">
-      <img src="{{ asset('images/summergirl.jpg') }}" class="img-fluid" alt="">
+      <img src="{{ asset('images/summergirl.jpg') }}" class="img-fluid" alt="illustration - dessin">
     </div>
-  <div class="col-md-6 col-xs-12 text-orangered px-3" >
-      <h1 class="second-section-title" data-aos="fade-right" data-aos-duration="1000">Illustrations personnalisée !</h1>
-      <p class="h4" data-aos="fade-right" data-aos-duration="1100">Je peux vous peindre un portrait, un paysage, un animal ou tout autre...</p>
+  <div class="col-md-6 col-xs-12 text-orangered px-3" data-aos="fade-right" data-aos-duration="1000">
+      <h1 class="second-section-title" >Illustrations personnalisées !</h1>
+      <p class="h4" data-aos="fade-right" data-aos-duration="1200">Je peux vous peindre un portrait, un paysage, un animal ou tout autre...</p>
     </div>
     
 </section>
 <section class="d-flex section w-100 text-white section-forth align-items-center row " id="fourth-section">
-  <div class="col-md-6 col-xs-12 px-3">
-      <h1 class="title second-section-title" data-aos="fade-right" data-aos-duration="1000">Illustrations personnalisée !</h1>
-      <p class="h4" data-aos="fade-right" data-aos-duration="1100">Je peux vous peindre un portrait, un paysage, un animal ou tout autre...</p>
+  <div class="col-md-6 col-xs-12 text-right pr-5 front" data-aos="fade-right" data-aos-duration="1000">
+      <h1 class="title second-section-title" >Huiles et Aquarelle personnalisées !</h1>
+      <p class="h4" data-aos="fade-right" data-aos-duration="1200">Je peux vous peindre un portrait, un paysage, un animal ou tout autre...</p>
     </div>
   <div class="col-md-6 col-xs-12" >
-    <img src="{{ asset('images/renard.jpg') }}" class="img-fluid renard" alt="">
+    <img src="{{ asset('images/renard.jpg') }}" class="img-fluid renard" alt="Renard - huile">
   </div>
   <img src="{{ asset('images/stain-orange-3.svg') }}" class="position-absolute d-none d-sm-block"  alt="blue-paint-stain">
 
@@ -103,8 +101,7 @@
     $(window).on("scroll", function(e) {
         var el = content.filter(function(i, el) {
           console.log($(el).css("height"))
-          return el.getBoundingClientRect().bottom >= parseInt($(el).css("height"))
-          //console.log(el.getBoundingClientRect().bottom >= parseInt($(el).css("height")+20)) 
+          return el.getBoundingClientRect().bottom >= parseInt($(el).css("height"));
         })
         , sectionId = el.is(content) 
                       ? el.attr("id") 
@@ -112,12 +109,13 @@
         sectionLink = $("."+sectionId);
         allItems.forEach(item => {
         for(var i = 0; i < allItems.length; i++){
-            allItems[i].classList.remove("activee")
-          }
+          if(el.length == 0){
+            return ;
+          }else{
+            allItems[i].classList.remove("activee");
+            sectionLink.addClass("activee");
+          }}
         })
-        console.log(sectionLink)
-        sectionLink.addClass("activee");
-        //console.log(sectionLink, allItems);
     }).scroll();
   </script>
 {% endblock %}

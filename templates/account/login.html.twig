@@ -3,12 +3,11 @@
 {% block title %}Connexion au site{% endblock %}
 
 {% block body %}
-<div class="container">
+<div class="container min-vh-100">
     <div class="row">
-        <div class="col-md-3">&nbsp;</div>
-        <div class="col-md-6">
-            <div class="bg-light py-3 px-3">
-                <h1>Connectez vous</h1>
+        <div class="col-md-12 ">
+            <div class="bg-light py-3 px-3 my-5">
+                <h1 class="text-primary my-5 text-center">Connectez vous</h1>
 
                 {% if Error %}
                     <div class="alert alert-danger">Une erreur est survenue, le nom d'utilisateur ou le mot de passe est invalide</div>
@@ -23,8 +22,8 @@
                         <label for="password">Mot de passe</label>
                         <input class="form-control" type="password" name="_password" id="password" placeholder="Mot de passe..." required>
                     </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-success">Connexion</button>
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn btn-success ">Connexion</button>
                     </div>
                 </form>
             </div>

@@ -1,8 +1,8 @@
-<footer class=" bg-dark py-5 text-center text-light shadow" id="footer">
+<footer class="text-center bg-dark pt-5  text-light shadow front" id="footer">
     <i class="animated infinite heartBeat fas fa-heart h3 share"></i>
     <h3>&nbsp; Soutenez mon travail en partageant&nbsp;!</h3>
     <nav>
-        <ul class="nav justify-content-center">
+        <ul class="nav justify-content-center ">
             <li class="nav-item p-3 h2">
                 <i class="fab fa-instagram"></i>
             </li>
@@ -15,16 +15,24 @@
         </ul>
     </nav>
     <div class="row">
-        <div class="col">
+        <div class="col text-left mb-5">
             <nav>
-                <ul class="nav d-flex flex-column justify-content-center">
-                    <li class="nav-item"><a href="https://www.freepik.com/vectors/background">Background vector created by kjpargeter - www.freepik.com</a></li>
-                    <li class="nav-item"><a href="https://www.freepik.com/vectors/vintage">Vintage vector created by kjpargeter - www.freepik.com</a></li>
+                <p class="m-0">Resources:</p>
+                <ul class="nav d-flex flex-column ">
+                    <li class="nav-item"><small><a class="text-light" href="https://www.freepik.com/vectors/background">Background vector created by kjpargeter</a></small></li>
+                    <li class="nav-item"><small><a class="text-light" href="https://www.freepik.com/vectors/vintage">Vintage vector created by kjpargeter</a></small></li>
                 </ul>
             </nav>
         </div>
-        <div class="col-md-6">
-
-        </div>
     </div>
+    <small class="">&#9400; <span class="date"></span> Patricia Masuy Artstudio All rights reserved.</small>
 </footer>
+{% block javascripts %}
+<script>
+  window.onload = function() {
+    var date = new Date();
+
+    $(".date").html(date.getFullYear())
+};
+</script>
+{% endblock %}

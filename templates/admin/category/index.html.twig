@@ -1,6 +1,6 @@
 {% extends 'admin/base.html.twig' %}
 
-{% block title %}Admin Categories{% endblock %}
+{% block title %}Gestion des categories{% endblock %}
 
 {% block body %}
 <section class="page">
@@ -43,4 +43,11 @@
     </div>
 </section>
 {% endblock %}
+{% block javascripts %}
+<script>
+  window.onload = function() {
+  $("label").addClass(`text-primary `)
+};
+</script>
+{% endblock %} 
 

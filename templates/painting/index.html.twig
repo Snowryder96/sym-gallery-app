@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Nos magnifiques annonces{% endblock %}
+{% block title %}Les peintures{% endblock %}
 
 {% block body %}
 <section class="page">
@@ -48,7 +48,7 @@
                         style="background-image: url('./uploads/paintings/{{painting.paintingFilename}}') "></div>
                         {# <img src="{{asset('uploads/paintings/' ~ painting.paintingFilename )}}" class="grid-item {{painting.category.name}} {{painting.technic.name}} {% if painting.availability %}1{% else %}0{% endif %}" alt=""> #}
                     </a>
-                {# {% include 'painting/_painting.html.twig'%} #}
+
             {% endfor %}
             
         </div>    

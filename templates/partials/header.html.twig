@@ -1,6 +1,7 @@
 {% set currentPath = path(app.request.attributes.get('_route'),app.request.attributes.get('_route_params')) %}
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
-	<a class="navbar-brand" href="">Patricia Masuy Art</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary ">
+	<img src="{{ asset("images/logo.png") }}" class="logo mr-3" alt="logo">
+	<a class="navbar-brand" href="{{ path('home') }}">Patricia Masuy Art</a>
 	<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 	<div class="navbar-collapse collapse" id="navbarColor02" style="">
 		<ul class="navbar-nav mr-auto">
@@ -29,6 +30,18 @@
 					<a href="{{ path('admin_painting_new')}}" class="dropdown-item">
 					<i class="fas fa-plus text-primary"></i>
 					&nbsp;Importer une peinture</a>
+					<a href="{{ path('admin_painting')}}" class="dropdown-item">
+					<i class="fas fa-image text-primary"></i>
+					&nbsp;Peintures</a>
+					<a href="{{ path('admin_message')}}" class="dropdown-item">
+					<i class="fas fa-envelope text-primary"></i>
+					&nbsp;Messages</a>
+					<a href="{{ path('admin_category')}}" class="dropdown-item">
+					<i class="fas fa-ellipsis-v text-primary"></i>
+					&nbsp;Categories</a>
+					<a href="{{ path('admin_technic')}}" class="dropdown-item">
+					<i class="fas fa-ellipsis-v text-primary"></i>
+					&nbsp;Techniques</a>
 					<div class="dropdown-divider"></div>
 					<a href="{{ path('admin_index')}}" class="dropdown-item">
 					<i class="fas fa-tools text-primary"></i>

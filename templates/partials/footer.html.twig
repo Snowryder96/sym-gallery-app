@@ -1,16 +1,24 @@
 <footer class="text-center bg-dark pt-5  text-light shadow front" id="footer">
     <i class="animated infinite heartBeat fas fa-heart h3 share"></i>
     <h1 class="h3">&nbsp; Soutenez mon travail en partageant&nbsp;!</h1>
+    {% set currentPath = app.request.uri %}
     <nav>
         <ul class="nav justify-content-center ">
             <li class="nav-item p-3 h2">
-                <i class="fab fa-instagram"></i>
+                <a href="mailto:?&amp;Body={{currentPath}}" class="text-white" rel="noopener">
+                    <i class="fas fa-envelope"></i>
+                </a>       
             </li>
             <li class="nav-item p-3 h2">
-                <i class="fab fa-facebook-square"></i>
+                <a href="http://www.facebook.com/sharer.php?u={{currentPath}}" class="text-white" rel="noopener" target="_blank">
+                    <i class="fab fa-facebook-square"></i>
+                </a>
+                
             </li>
             <li class="nav-item p-3 h2">
-                <i class="fab fa-pinterest-square"></i>
+                <a href="http://pinterest.com/pin/create/button/?url={{currentPath}}" class="text-white" rel="noopener" target="_blank">
+                    <i class="fab fa-pinterest-square"></i>
+                </a>
             </li>
         </ul>
     </nav>

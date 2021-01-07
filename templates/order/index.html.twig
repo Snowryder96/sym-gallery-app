@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Commande{% endblock %}
+
+{% block body %}
+<section class="page">
+    <div class="container my-5">
+        <h1 class="h2 text-primary my-5">Vous etes interessez par cette peinture et vous souhaitez obtenir un prix ?</h1>
+        <div class="row">
+            <div class="col-md-6 mb-5">
+                <img src="{{ asset('uploads/paintings/' ~ painting.paintingFilename )}}" class="w-75 m-auto shadow-lg" alt="image de la peinture {{painting.title}}">
+            </div>
+            <div class="col-md-6">
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <button type="submit" class="btn btn-primary my-4 text-capitalize">Envoyer une demande !</button>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

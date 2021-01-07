@@ -8,10 +8,10 @@
     <div class="container-fluid">
         <div class="row text-center my-5 align-items-center">
             <div class="col-md-8 col-sm-12 ">
-                <img src="{{ asset('uploads/paintings/' ~ painting.paintingFilename )}}" class="w-100 m-auto shadow-lg" alt="image de la peinture {{painting.title}}">
-            </div>
+                <img src="{{ asset('uploads/paintings/' ~ painting.paintingFilename )}}" class="w-75 m-auto shadow-lg" alt="image de la peinture {{painting.title}}">
+            </div> 
             <div class="col-md-4 col-sm-12">
-            <h3 class="text-primary m-5">{{painting.title}}</h3>
+            <h3 class="text-primary my-5">{{painting.title}}</h3>
                 <h4>{{painting.legende}}</h4>
                 <p>{{painting.description}}</p>
                 <p>{{painting.width}}x{{painting.height}}</p>
@@ -23,9 +23,9 @@
                 {% endif %}
 
                 {% if painting.availability %}
-                    <a href="" class="btn custom-buy-btn">Disponible</a>
+                    <a href="{{ path('painting_show_order', {'slug': painting.slug})  }}" class="btn custom-buy-btn">Disponible</a>
                 {% else %}
-                     <p class="font-italic">Non Disponible</p>  
+                    <p class="font-italic">Non Disponible</p>  
                 {% endif %}
                 <p>
                     <small>mis en ligne le : {{painting.createdAt|date('d/m/Y')}}</small>
@@ -34,9 +34,5 @@
         </div>
     </div>
 </section>
-
-{% endblock %}
-{% block javascripts %}
-
 
 {% endblock %}

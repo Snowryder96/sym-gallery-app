@@ -4,8 +4,8 @@
 
 {% block body %}
   <img src="{{ asset('images/stain-blue-1.svg') }}" class="blue-stain d-none d-sm-block" alt="blue-paint-stain">
-  <img src="{{ asset('images/stain-turquoise-2.svg') }}" class="position-absolute d-none d-sm-block"  alt="orange-paint-stain">
-  <img src="{{ asset('images/mobile/stain-turquoise-2.svg') }}" class="position-absolute d-block d-sm-none"  alt="orange-paint-stain">
+  <img src="{{ asset('images/stain-turquoise-2.svg') }}" class="position-absolute  d-none d-sm-block"  alt="orange-paint-stain">
+  <img src="{{ asset('images/mobile/stain-turquoise-2.svg') }}" class="position-absolute base d-block d-sm-none"  alt="orange-paint-stain">
   <img src="{{ asset('images/stain-orange-2.svg') }}" class="position-absolute d-none d-sm-block" alt="orange-paint-stain">
 <nav class="navmenu mr-2 d-none d-sm-block">
   <ul>
@@ -17,28 +17,28 @@
   </ul>
 </nav>
 
-<section class="section d-flex flex-row-reverse p-5 my-0 mx-auto" id="first-section">
-  <div class="text-center mx-auto my-auto home-profile text-primary ">
-  <img src="{{ asset('images/profile-concept.svg') }}" class="home-logo" data-aos="zoom-in" data-aos-duration="1000" alt="">
+<section class="section d-flex flex-row-reverse p-5 my-0 mx-auto behind" id="first-section">
+  <div class="text-center mx-auto my-auto home-profile text-primary " data-aos="zoom-out-down">
+  <img src="{{ asset('images/profile-concept.svg') }}" class="home-logo" data-aos="zoom-out-down-center" data-aos-duration="1000" alt="">
     <h1 class="first-section-title mb-4" data-aos="fade-right" data-aos-duration="1000">Patricia Masuy</h1>
     <blockquote class="blockquote text-center text-primary" data-aos="fade-left" data-aos-duration="1000">
       <p class="mb-0"><i class="fas fa-quote-left"></i>&nbsp;L'art n'est pas une compétition, c'est une émotion&nbsp;<i class="fas fa-quote-right"></i></p>
-      <footer class="blockquote-footer">Citation par <cite title="Source Title">Patricia Masuy</cite></footer>
+      <footer class="blockquote-footer text-right"><cite title="Source Title">Patricia Masuy</cite></footer>
     </blockquote>
   </div>
   {# <img src="{{ asset('images/artist-illustration.svg') }}" class=" illustration" alt="illustration"> #}
 </section>
-<section class="d-flex section w-100 section-second text-white px-3 align-items-center row" id="second-section">
+<section class="d-flex section w-100 section-second text-white px-3 align-items-center row " id="second-section">
   <img src="{{ asset('images/mobile/stain-orange-2.svg') }}" class="position-absolute d-block d-sm-none"  alt="orange-paint-stain">
-  <div class="col-md-6 col-xs-12 gap-bottom text-right pr-5" data-aos="fade-right" data-aos-duration="1000" >
-      <h1 class="second-section-title" >Peinture personnalisée !</h1>
-      <p class="h4" data-aos="fade-right" data-aos-duration="1200">Je peux vous peindre un portrait, un paysage, un animal ou tout autre...</p>
+  <div class="col-md-6 col-xs-12 gap-bottom text-right pr-4" data-aos="fade-right" data-aos-duration="1000" >
+      <h1 class="second-section-title " >Peinture personnalisées !</h1>
+      <p class="h4" data-aos="fade-right" data-aos-duration="1200">Je peux vous peindre un portrait, un paysage...</p>
     </div>
-    <div class="col-md-6 col-xs-12 mt-5">
+    <div class="col-md-6 col-xs-12 mt-5 ">
       <div class="composition" >
-            <img src="{{ asset('images/composition/img1.JPG') }}" alt="peinture 1" class="composition__photo composition__photo--p1">
-            <img src="{{ asset('images/composition/img2.jpg') }}" alt="peinture 2" class="composition__photo composition__photo--p2">
-            <img src="{{ asset('images/composition/img3.jpg') }}" alt="peinture 3" class="composition__photo composition__photo--p3">                   
+            <img src="{{ asset('images/composition/img1.JPG') }}" data-aos="zoom-in" data-aos-duration="1200" alt="peinture 1" class="composition__photo composition__photo--p1">
+            <img src="{{ asset('images/composition/img2.jpg') }}" data-aos="zoom-in" data-aos-duration="1000" alt="peinture 2" class="composition__photo composition__photo--p2">
+            <img src="{{ asset('images/composition/img3.jpg') }}" data-aos="zoom-in" data-aos-duration="800" alt="peinture 3" class="composition__photo composition__photo--p3">                   
         </div>  
     </div>
     
@@ -49,14 +49,20 @@
     </div>
   <div class="col-md-6 col-xs-12 text-orangered px-3" data-aos="fade-right" data-aos-duration="1000">
       <h1 class="second-section-title" >Illustrations personnalisées !</h1>
-      <p class="h4" data-aos="fade-right" data-aos-duration="1200">Je peux vous peindre un portrait, un paysage, un animal ou tout autre...</p>
+      <h2 class="text-primary mb-3" data-aos="fade-right" data-aos-duration="1200">Je réalise vos illustrations au crayon ou en couleur.</h2>
+      <div class="text-primary p-4">
+        <p><i class="far fa-dot-circle"></i>&nbsp;&nbsp;Feutre</p>
+        <p><i class="far fa-dot-circle"></i>&nbsp;&nbsp;Peinture</p>
+        <p><i class="far fa-dot-circle"></i>&nbsp;&nbsp;Pastel</p>
+      </div>
     </div>
     
 </section>
 <section class="d-flex section w-100 text-white section-forth align-items-center row " id="fourth-section">
-  <div class="col-md-6 col-xs-12 text-right pr-5 front" data-aos="fade-right" data-aos-duration="1000">
-      <h1 class="title second-section-title" >Huiles et Aquarelle personnalisées !</h1>
-      <p class="h4" data-aos="fade-right" data-aos-duration="1200">Je peux vous peindre un portrait, un paysage, un animal ou tout autre...</p>
+  <div class="col-md-6 col-xs-12 text-right pr-5 front" >
+      <h1 id="titleSwap" class="text-warning title second-section-title">Huile</h1>
+      <h1 class="title second-section-title text-warning">personnalisées</h1>
+      <p class="h4 " data-aos="fade-right" data-aos-duration="1200">Je peux vous peindre un portrait, un paysage, un animal...</p>
     </div>
   <div class="col-md-6 col-xs-12" >
     <img src="{{ asset('images/renard.jpg') }}" class="img-fluid renard" alt="Renard - huile">
@@ -68,35 +74,38 @@
   <img src="{{ asset('images/mobile/stain-orange-4.svg') }}" class="position-absolute d-none d-sm-block"  alt="blue-paint-stain">
   <img src="{{ asset('images/stain-blue-1.svg') }}" class="position-absolute d-none d-sm-block" alt="blue-paint-stain">
   <div class="col p-0">
-    <h1 class="display-4 p-5 latest-title shadow-lg" data-aos="fade-right" data-aos-duration="1000">Dernières peintures...</h1>
+    <h1 class="display-4 p-5 latest-title shadow-lg">Dernières peintures...</h1>
   </div>
   <div class="d-flex flex-row align-items-center justify-content-around row p-0">
     {% for painting in lastPaintings %}
     <div class="col-md-4 col-xs-12">
       {% set url = path('painting_show', {'slug': painting.slug }) %}
       <a href="{{url}}" alt="{{painting.paintingFilename}}">
-        <img src="{{ asset('uploads/paintings/' ~ painting.paintingFilename )}}" data-aos="fade-right" data-aos-duration="1200" class="w-100 mb-2 shadow-lg" alt="{{painting.paintingFilename}}">
+        <img src="{{ asset('uploads/paintings/' ~ painting.paintingFilename )}}" data-aos="fade-right" data-aos-duration="1300" class="w-100 mb-2 shadow-lg" alt="{{painting.paintingFilename}}">
       </a>
     </div>
-      
     {% endfor %}
   </div>
-  
+  <div class="front p-4 my-4 mx-auto">
+      <a href="{{ path('painting_index') }}" class="h2 btn-xlg custom-btn font-weight-bold my-3 px-3 py-2 text-decoration-none">Voir la galerie</a>
+  </div>
 </section>
 {% endblock %}
 {% block javascripts %}
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
+    var i = 0;
+    function change() {
+      var styles = ["Aquarelle", "Acrylique", "Huile"];
+      $("#titleSwap").html(`<span data-aos="fade-in" data-aos-duration="1300" >${styles[i]}</span>`);
+      i = (i + 1) % styles.length;
+    }
+    setInterval(change, 3000);
+
     AOS.init();
+
     const allItems = document.querySelectorAll(".navmenu ul li a")
-    {# allItems.forEach(item => {
-      item.addEventListener("click", function(e){
-        for(var i = 0; i < allItems.length; i++){
-          allItems[i].classList.remove("activee")
-        }
-        this.classList.add("activee")
-      })
-    }) #}
+
     var content = $(".section");
     $(window).on("scroll", function(e) {
         var el = content.filter(function(i, el) {

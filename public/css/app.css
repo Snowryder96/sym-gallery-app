@@ -13,8 +13,6 @@ html {
     }
 
 body {
-  background-color: var(--bg);
-  color: var(--color-text);
   position: relative;
   transition: .1s;
   font-family: 'Ubuntu', sans-serif;
@@ -37,27 +35,6 @@ body {
 .container{
     margin-top: 20px;
 }
-
-.titre-annonce{
- padding: 2em;
- background-size: cover;
- background-position: center center;
-}
-
-div.titre-annonce h1, div.titre-annonce p{
-    color:white;
-    text-shadow: 3px 3px 3px rgba(0, 0, 0, .5);
-}
-div.titre-annonce .btn{
-    margin-top: 2em;
-    font-size: 1.5em;
-    line-height: 1.5em;
-}
-
-div.carousel-caption {
-    text-shadow: 3px 3px 3px rgba(0, 0, 0, .5);
-}
-
 .avatar{
     max-width: 128px;
     max-height: 128px;
@@ -88,59 +65,11 @@ div.carousel-caption {
 #datatable_filter{
     float:right;
 }
-.home1{
-    background-image: url('../images/bg-grad3.png') ;
-    height: 100vh;
-
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-
 
 .navbar{
     z-index: 10;
     width: 100%;
 }
-
-input#nightSwitch[type=checkbox] {
-    height: 0;
-    width: 0;
-    visibility: hidden; }
-  
-  label.darkMode {
-    cursor: pointer;
-    text-indent: -9999px;
-    width: 52px;
-    height: 27px;
-    background: var(--primary);
-    float: right;
-    border-radius: 100px;
-    position: relative;
-    border: 1px solid var(--transparantWhite); }
-  
-  label.darkMode:after {
-    content: '';
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 20px;
-    height: 20px;
-    background: #fff;
-    border-radius: 90px;
-    transition: 0.3s; }
-  
-  input#nightSwitch:checked + label {
-    background: var(--bg); }
-  
-  input#nightSwitch:checked + label:after {
-    left: calc(100% - 5px);
-    transform: translateX(-100%); }
-  
-  label.darkMode:active:after {
-    width: 45px; }
 section.page{
   min-height: 75%;
 }
@@ -162,7 +91,7 @@ a.nav-link:not(:hover){
   z-index: 0;
 }
 .front{
-  z-index: 11;
+  z-index: 111;
 }
 
 .shuffle-item{
@@ -177,6 +106,7 @@ a.nav-link:not(:hover){
   border-radius: 8px;
   transition: all .2s;
   position: relative;
+  
   display: block;
   letter-spacing: 2px; }
   .custom-buy-btn:hover {
@@ -193,14 +123,15 @@ a.nav-link:not(:hover){
 .custom-btn {
   border: solid #2196f3 2px;
   color: #2196f3;
+  background-color: transparent;
+  text-transform: capitalize;
   font-weight: bold;
   padding: 5px 10px;
-  text-transform: capitalize;
   border-radius: 8px;
   transition: all .4s; }
   .custom-btn:hover {
     background: #2196f3;
-    border: solid #2196f3 3px;
+    border: solid #2196f3 2px;
     color: white;
     /* transform: translateY(-3px); */
     -webkit-box-shadow: 0px 6px 30px -5px rgba(0, 0, 0, 0.75);
@@ -209,8 +140,11 @@ a.nav-link:not(:hover){
 .active{
   /* background-color: #2196f3; */
   background-color: #2196f3;
-  border: solid #2196f3 3px;
+  border: solid #2196f3 2px;
   color:white
+}
+.contact-text{
+  padding: 0 5em;
 }
 .row{
   padding:0;
@@ -248,11 +182,6 @@ a.nav-link:not(:hover){
   .composition:hover .composition__photo:not(:hover) {
     transform: scale(0.95); }
       
-
-/* 
-
-
-
 
 /* // Large devices (desktops, less than 1200px)
 @media (max-width: 1199.98px) { ... } */
@@ -324,8 +253,9 @@ a.nav-link:not(:hover){
   bottom: -1200px;
   z-index: 0;
 }
-
-
+.btn{
+  text-transform: lowercase;
+}
 .renard{
   max-height: 100vh;
   z-index: 3;
@@ -380,7 +310,6 @@ a.nav-link:not(:hover){
 .behind{
   z-index: -1;
 }
-
 .blue-stain-2{
   position: absolute;
   width:60%;
@@ -398,15 +327,9 @@ a.nav-link:not(:hover){
 .title{
   z-index: 12;
 }
-
-
 .second-section-title{
   font-size: 2.5em;
 }
-/* .home-logo{
-  width: 10em;
-  border-radius: 50%;
-} */
 .home-logo{
   position: absolute;
   width: 300%;
@@ -482,6 +405,9 @@ nav.navmenu ul li a.activee::before{
 .bg-primary-dark{
   background-color: rgb(8, 118, 207);
 }
+.text-cyan{
+  color: #35E6F2;
+}
 
 footer{
   z-index:10;
@@ -526,11 +452,6 @@ footer{
   .blue-stain-2{
     display: none;
   }
-  
-  
-  /* .illustration{
-    display: none;
-  } */
 }
 /*/ Small devices (landscape phones, less than 768px) */
 @media (max-width: 767.98px) { 
@@ -589,6 +510,9 @@ footer{
   .home-profile{
     padding-top: 18em;
   }
+  .contact-text{
+    padding: 0;
+  }
   
   .home-logo{
     position: absolute;
@@ -639,8 +563,3 @@ footer{
     left: 2em;
   }
 }
-
-/* .aquarelle{
-  background-image: url('../images/blue-aquarelle.png');
-  background-position: center;
-} */

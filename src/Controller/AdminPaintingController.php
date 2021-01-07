@@ -75,7 +75,7 @@ class AdminPaintingController extends AbstractController
                 $manager->flush();
                 $this->addFlash(
                     'success',
-                    "l'annonce <strong>{$painting->getTitle()}</strong> a bien été enregistrée !"
+                    "La peinture <strong>{$painting->getTitle()}</strong> a bien été enregistrée !"
                 );
             }
             // Redirrection vers la nouvelle peinture creé
@@ -123,7 +123,7 @@ class AdminPaintingController extends AbstractController
             ]);
         }
 
-        return $this->render('painting/edit.html.twig', [
+        return $this->render('admin/painting/edit.html.twig', [
             'form' => $form->createView(),
             'painting' => $painting
         ]);

@@ -28,7 +28,7 @@ class AdminTechnicController extends AbstractController
             $manager->flush();
             $this->addFlash(
                 'success',
-                "l'annonce <strong>{$technic->getName()}</strong> a bien été enregistrée !"
+                "La technique <strong>{$technic->getName()}</strong> a bien été enregistrée !"
             );
         }
         return $this->render('admin/technic/index.html.twig', [
@@ -68,10 +68,10 @@ class AdminTechnicController extends AbstractController
 
             $this->addFlash(
                 'success',
-                "les modifications de la categorie <strong>{$technic->getName()}</strong> ont bien été enregistrée !"
+                "les modifications de la technique <strong>{$technic->getName()}</strong> ont bien été enregistrée !"
             );
 
-            return $this->redirectToRoute('admin_category');
+            return $this->redirectToRoute('admin_technic');
         }
 
         return $this->render('admin/technic/edit.html.twig', [

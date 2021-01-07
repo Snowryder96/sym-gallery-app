@@ -4,24 +4,37 @@
 
 {% block body %}
 <section class="page contact">
+    <img src="{{ asset('images/orange-yellow-stain.svg') }}" class="position-absolute behind" alt="">
     <img src="{{ asset('images/contact-stain.svg') }}" class="position-absolute behind" alt="orange-paint-stain">
     <div class="container p-4 my-0">
     <article class="d-flex flex-column text-center front bg-transparent mt-5 rounded">
         <div class="bg-white opacity-5 shadow-lg rounded">
             <img src="{{ asset('images/pm-s.png' )}}" class="border rounded-circle border-5 my-5 mx-auto shadow-lg" alt="Photo de profile">
         </div>
-            <div class="profile p-4 rounded opacity-5 shadow-lg">
-                <h2 class="font-weight-bold my-3">Patricia Masuy</h2>
-                <p class="text-italic"><em>hahah</em></p>
-                <p class="px-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda aut laboriosam vero placeat praesentium a minus, quas dolore excepturi rerum ratione dicta repellendus. Perspiciatis inventore totam rerum laudantium. Quos, voluptas.</p>
-            </div>    
+            <div class="profile p-4  rounded opacity-5 shadow-lg">
+                <h2 class="font-weight-bold my-3 text-cyan">Patricia Masuy</h2>
+                <p class="text-italic"><em>artiste/illustratrice indépendante</em></p>
+                <div class="contact-text">
+                    <h1 class="h2 my-5 text-left"><i class="fas fa-chevron-right m-0 text-cyan"></i>&nbsp;&nbsp;Vous avez une question ou souhaitez me contacter pour une collaboration ou une commande ?</h1>
+                    <h2 class="h3 text-left my-5 text-secondary"><i class="fas fa-chevron-right m-0 text-cyan"></i>&nbsp;&nbsp;Vous avez une question concernant une peinture qui vous intéresse, sur les modalités de livraison, sur le tarif ou bien une demande de collaboration ou partenariat ?</h2>
+                    <h1 class="h2 my-3 text-cyan">Merci d'utiliser ce formulaire de contact.</h1>
+                    <a href="#contact" class="text-decoration-none text-white d-flex flex-column text-center my-5 animated  fadeInUp">
+                        <i class="fas fa-chevron-down h1 m-0"></i>
+                        <i class="fas fa-chevron-down h1"></i>
+                    </a>
+                </div>
+            </div>
+            <hr id="contact">    
     </article>
-    <section class="card p-5 opacity-5 rounded shadow-lg">
-        <h1 class="text-primary mb-5">Contactez moi !</h1>
-        {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <button type="submit" class="btn btn-primary">Envoyer</button>
-        {{ form_end(form) }}
+    <section class="card p-5 opacity-5 rounded shadow-lg my-5" >
+        <h1 class="text-primary my-5 text-center" >Contactez moi !</h1>
+        <div class="my-5">
+            
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button type="submit" class="btn btn-primary">Envoyer</button>
+            {{ form_end(form) }}
+        </div>
     </section>
     
     </div>

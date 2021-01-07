@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use Cocur\Slugify\Slugify;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\JoinColumn;
 use App\Repository\PaintingRepository;
@@ -83,6 +85,16 @@ class Painting
      * @ORM\Column(type="boolean")
      */
     private $availability;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Order::class, mappedBy="painting", orphanRemoval=true)
+     */
+    private $orders;
+
+    public function __construct()
+    {
+        $this->orders = new ArrayCollection();
+    }
 
     /**
      * Permet d'initialiser le slug
@@ -243,6 +255,36 @@ class Painting
     public function setAvailability(bool $availability): self
     {
         $this->availability = $availability;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Order[]
+     */
+    public function getOrders(): Collection
+    {
+        return $this->orders;
+    }
+
+    public function addOrder(Order $order): self
+    {
+        if (!$this->orders->contains($order)) {
+            $this->orders[] = $order;
+            $order->setPainting($this);
+        }
+
+        return $this;
+    }
+
+    public function removeOrder(Order $order): self
+    {
+        if ($this->orders->removeElement($order)) {
+            // set the owning side to null (unless already changed)
+            if ($order->getPainting() === $this) {
+                $order->setPainting(null);
+            }
+        }
 
         return $this;
     }

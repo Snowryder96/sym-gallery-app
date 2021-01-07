@@ -28,7 +28,7 @@ class AdminCategoryController extends AbstractController
             $manager->flush();
             $this->addFlash(
                 'success',
-                "l'annonce <strong>{$category->getName()}</strong> a bien été enregistrée !"
+                "La categorie <strong>{$category->getName()}</strong> a bien été enregistrée !"
             );
         }
         return $this->render('admin/category/index.html.twig', [

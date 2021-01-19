@@ -9,24 +9,22 @@
   <img src="{{ asset('images/stain-orange-2.svg') }}" class="position-absolute d-none d-sm-block" alt="orange-paint-stain">
 <nav class="navmenu mr-2 d-none d-sm-block">
   <ul>
-    <li><a href="#first-section" class="first-section font-0" alt="first-section">-</a></li>
-    <li><a href="#second-section" class="second-section font-0" alt="second-section">-</a></li>
-    <li><a href="#third-section" class="third-section font-0" alt="third-section">-</a></li>
-    <li><a href="#fourth-section" class="fourth-section font-0" alt="fourth-section">-</a></li>
-    <li><a href="#fivth-section" class="fivth-section font-0" alt="fivth-section">-</a></li>
+    <li><a href="#first-section" class="first-section font-0" >-</a></li>
+    <li><a href="#second-section" class="second-section font-0" >-</a></li>
+    <li><a href="#third-section" class="third-section font-0" >-</a></li>
+    <li><a href="#fourth-section" class="fourth-section font-0" >-</a></li>
+    <li><a href="#fivth-section" class="fivth-section font-0" >-</a></li>
   </ul>
 </nav>
-
 <section class="section d-flex flex-row-reverse p-5 my-0 mx-auto behind" id="first-section">
   <div class="text-center mx-auto my-auto home-profile text-primary " data-aos="zoom-out-down">
-  <img src="{{ asset('images/profile-concept.svg') }}" class="home-logo" data-aos="zoom-out-down-center" data-aos-duration="1000" alt="">
+  <img src="{{ asset('images/profile-concept.svg') }}" class="home-logo" data-aos="zoom-out-down-center" data-aos-duration="1000" alt="img-logo">
     <h1 class="first-section-title mb-4" data-aos="fade-right" data-aos-duration="1000">Patricia Masuy</h1>
     <blockquote class="blockquote text-center text-primary" data-aos="fade-left" data-aos-duration="1000">
       <p class="mb-0"><i class="fas fa-quote-left"></i>&nbsp;L'art n'est pas une compétition, c'est une émotion&nbsp;<i class="fas fa-quote-right"></i></p>
       <footer class="blockquote-footer text-right"><cite title="Source Title">Patricia Masuy</cite></footer>
     </blockquote>
   </div>
-  {# <img src="{{ asset('images/artist-illustration.svg') }}" class=" illustration" alt="illustration"> #}
 </section>
 <section class="d-flex section w-100 section-second text-white px-3 align-items-center row " id="second-section">
   <img src="{{ asset('images/mobile/stain-orange-2.svg') }}" class="position-absolute d-block d-sm-none"  alt="orange-paint-stain">
@@ -80,7 +78,7 @@
     {% for painting in lastPaintings %}
     <div class="col-md-4 col-xs-12">
       {% set url = path('painting_show', {'slug': painting.slug }) %}
-      <a href="{{url}}" alt="{{painting.paintingFilename}}">
+      <a href="{{url}}">
         <img src="{{ asset('uploads/paintings/' ~ painting.paintingFilename )}}" data-aos="fade-right" data-aos-duration="1300" class="w-100 mb-2 shadow-lg" alt="{{painting.paintingFilename}}">
       </a>
     </div>

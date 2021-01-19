@@ -7,10 +7,10 @@
 <section class="page py-5 px-1">
     <div class="container-fluid">
         <div class="row text-center my-5 align-items-center">
-            <div class="col-md-8 col-sm-12 ">
+            <aside class="col-md-8 col-sm-12 ">
                 <img src="{{ asset('uploads/paintings/' ~ painting.paintingFilename )}}" class="w-75 m-auto shadow-lg" alt="image de la peinture {{painting.title}}">
-            </div> 
-            <div class="col-md-4 col-sm-12">
+            </aside> 
+            <article class="col-md-4 col-sm-12">
             <h3 class="text-primary my-5">{{painting.title}}</h3>
                 <h4>{{painting.legende}}</h4>
                 <p>{{painting.description}}</p>
@@ -30,7 +30,7 @@
                 <p>
                     <small>mis en ligne le : {{painting.createdAt|date('d/m/Y')}}</small>
                 </p>
-            </div>
+            </article>
         </div>
     </div>
 </section>

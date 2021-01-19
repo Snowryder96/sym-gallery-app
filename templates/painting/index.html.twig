@@ -6,14 +6,15 @@
 <section class="page">
     <h1 class="my-4 text-center text-primary font-weight-bold">Galerie</h1>
     <div class="row">
-        <div class="col-md-2  filters">
-            <div class="button-group filter-button-group my-4 " data-filter-group="availability" id="availability">
+        <aside class="col-md-2  filters">
+            <div class="button-group filter-button-group my-4 col px-0" data-filter-group="availability" id="availability">
+                <h2 class="text-primary">Disponibilités</h2>
                 <button data-filter="*" class="btn custom-btn mb-1 active ">Toutes</button>
                 <button data-filter=".1" class="btn custom-btn mb-1">Disponible</button>
                 <button data-filter=".0" class="btn custom-btn mb-1">Non disponible</button>
             </div>        
             <div class="button-group filter-button-group my-4 d-none d-sm-block" data-filter-group="category" id="category">
-                <h3 class="text-primary my-3">Categorie</h3>
+                <h2 class="text-primary my-3">Categorie</h2>
                 <hr>
                 <button data-filter="*" class="btn custom-btn mb-1 active">Toutes</button>
                 {% for category in categories %}
@@ -21,15 +22,15 @@
                 {% endfor %} 
             </div>
             <div class="button-group filter-button-group my-4 d-none d-sm-block" data-filter-group="technic" id="technic">
-                <h3 class="text-primary my-3">Technique</h3>
+                <h2 class="text-primary my-3">Technique</h2>
                 <hr>
                 <button data-filter="*" class="btn custom-btn mb-1 active ">Toutes</button>
                 {% for technic in technics %}
                 <button data-filter=".{{technic.name}}" class="btn custom-btn mb-1 d-block">{{technic.name}}</button>
                 {% endfor %} 
             </div>
-        </div>
-    <div class="col">
+        </aside>
+    <section class="col">
         <div class="grid pl-5">
             {% for painting in paintings %}
                 {% set url = path('painting_show', {'slug': painting.slug }) %}
@@ -50,7 +51,7 @@
             {% endfor %}
             
         </div>    
-    </div>
+    </section>
 </div>
 </section>
 {% endblock %}
